@@ -21,7 +21,7 @@ app = FastAPI(title="Auction House API", version="1.0.0", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5500", "http://127.0.0.1:5500"],  # local project — open for the vanilla JS frontend served separately
+    allow_origins=["http://localhost:5500", "http://127.0.0.1:5500","https://auction-house-rho.vercel.app",],  # local project — open for the vanilla JS frontend served separately
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
