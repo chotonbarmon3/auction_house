@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auctioneer Desk — The Ledger Room</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <div>
+      <span class="brand-eyebrow">Est. Locally · Lot by Lot</span>
+      <span><span class="brand-mark">The</span> Ledger Room</span>
+    </div>
+  </div>
+  <div id="nav-slot" class="nav-links"></div>
+</div>
+
+<div class="page">
+  <div class="hero">
+    <span class="hero-eyebrow">Auctioneer Desk</span>
+    <h1>Catalog a new lot.</h1>
+    <p>Upload a product, set its starting price and minimum increment, then pre-declare the exact window bidding will be open.</p>
+  </div>
+
+  <div style="display:grid; grid-template-columns: 1fr 1.3fr; gap: 40px; align-items: start;">
+    <div class="card">
+      <h3 class="form-title" style="font-size:20px;">New lot &amp; schedule</h3>
+      <div class="error-msg" id="error-box"></div>
+      <div class="success-msg" id="success-box"></div>
+
+      <form id="create-form">
+        <div class="field">
+          <label for="name">Product name</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="field">
+          <label for="description">Description</label>
+          <textarea id="description" rows="3"></textarea>
+        </div>
+        <div class="field">
+          <label for="image_url">Image URL (optional)</label>
+          <input type="url" id="image_url" placeholder="https://…">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="starting_price">Starting price ($)</label>
+            <input type="number" id="starting_price" min="0.01" step="0.01" required>
+          </div>
+          <div class="field">
+            <label for="min_increment">Minimum increment ($)</label>
+            <input type="number" id="min_increment" min="0.01" step="0.01" value="1" required>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="start_time">Auction opens</label>
+            <input type="datetime-local" id="start_time" required>
+          </div>
+          <div class="field">
+            <label for="end_time">Auction closes</label>
+            <input type="datetime-local" id="end_time" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-brass btn-block">Schedule auction</button>
+      </form>
+    </div>
+
+    <div>
+      <div class="section-label">My scheduled &amp; past lots</div>
+      <div id="my-auctions-slot"><div class="loading-state">Loading your lots…</div></div>
+    </div>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

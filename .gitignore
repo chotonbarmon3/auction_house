@@ -1,0 +1,15 @@
+# Python
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+*.pyc
+
+# Environment secrets — never commit this
+backend/.env
+backend/.env.save*
+
+
+# OS/editor junk
+.vscode/
+.DS_Store
+*.save

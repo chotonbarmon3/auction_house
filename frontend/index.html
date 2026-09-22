@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ledger Room — Auction Catalog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <div>
+      <span class="brand-eyebrow">Est. Locally · Lot by Lot</span>
+      <span><span class="brand-mark">The</span> Ledger Room</span>
+    </div>
+  </div>
+  <div id="nav-slot" class="nav-links"></div>
+</div>
+
+<div class="page">
+  <div class="hero">
+    <span class="hero-eyebrow">Current Catalog</span>
+    <h1>Every lot, timed to the second.</h1>
+    <p>Browse upcoming, live, and closed lots. Bidding opens automatically at the scheduled hour and closes the moment the clock runs out — no extensions, no exceptions.</p>
+  </div>
+
+  <div class="filter-row" id="filter-row">
+    <button class="filter-chip active" data-filter="all">All lots</button>
+    <button class="filter-chip" data-filter="live">Live now</button>
+    <button class="filter-chip" data-filter="upcoming">Upcoming</button>
+    <button class="filter-chip" data-filter="ended">Closed</button>
+  </div>
+
+  <div id="catalog-slot">
+    <div class="loading-state">Fetching the catalog…</div>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/catalog.js"></script>
+</body>
+</html>
