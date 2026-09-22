@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:8000";
+const API_BASE = "https://auction-house-vszz.onrender.com";
 
 const Auth = {
   getToken() {
